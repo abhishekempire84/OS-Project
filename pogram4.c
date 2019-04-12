@@ -5,7 +5,7 @@ int main()
 	int i,small,count=0,time,limit;
 	double w_time=0,t_around_time=0,terminate;
 	float avg_w_time,avg_t_around_time;
-	printf("\nEnter the total number of processes:\t");
+	printf("\nEnter the total number of processes:\n");
 	scanf("%d",&limit);
 	printf("\nEnter details of %d Processes\n",limit);
 	for(i=0;i<limit;i++)
