@@ -10,7 +10,7 @@ int main()
 	printf("\nEnter details of %d Processes\n",limit);
 	for(i=0;i<limit;i++)
 	{
-		printf("\Enter Arrival Time:\t");
+		printf("\nEnter Arrival Time:\t");
 		scanf("%d",&a_time[i]);
 		printf("Enter Burst Time:\t");
 		scanf("%d",&b_time[i]);
