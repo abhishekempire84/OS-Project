@@ -1,44 +1,45 @@
-#include<stdio.h>
-int main()
+#include <stdio.h>
+
+int main() 
 {
-	int at[10],bt[10],temp[10];
-	int i,small,count=0,time,n;
-	double wt=0,t_around_t=0,terminate;
-	float avg_w_t,avg_t_around_t;
-	printf("\nEnter the total number of processes:\n");
-	scanf("%d",&n);
-	printf("\nEnter details of %d Processes\n",n);
-	for(i=0;i<n;i++)
-	{
-		printf("\nEnter Arrival Time:\t");
-		scanf("%d",&at[i]);
-		printf("Enter Burst Time:\t");
-		scanf("%d",&bt[i]);
-		temp[i]=bt[i];
-	}
-bt[9]=9999;
-for(time=0;count!=n;time++)
-{
-	small=9;
-	for(i=0;i<n;i++)
-	{
-		if(at[i] <= time && bt[i] < bt[small] && bt[i] > 0);
-		{
-			small=i;
-		}
-	}
-bt[small]--;
-if(bt[small]==0)
-{
-	count++;
-	terminate=time + 1;
-	wt=w_time + terminate - at[small] - temp[small];
-	t_around_t=t_around_t + terminate - at[small];
-}
-}
-avg_w_t = wt / n;
-avg_t_around_t = t_around_t / n;
-printf("\nAverage Waiting Time:\t%lf\n",avg_w_t);
-printf("\nAverage Turnaround Time:\t%lf\n",avg_t_around_t);
-return 0;
+      int at[10], bt[10], temp[10];
+      int i, smallest, count = 0, time, n;
+      double wt = 0, turnaround_t = 0, end;
+      float avg_w_t, avg_t_t;
+      printf("\nEnter the  Number of Processes:\t");
+      scanf("%d", &n); 
+      printf("\nEnter Details of all %d Processes\n", n);
+      for(i = 0; i < n; i++)
+      {
+            printf("\nEnter Arrival Time:\t");
+            scanf("%d", &at[i]);
+            printf("Enter Burst Time:\t");
+            scanf("%d", &bt[i]); 
+            temp[i] = bt[i];
+      }
+      bt[9] = 9999;  
+      for(time = 0; count != n; time++)
+      {
+            smallest = 9;
+            for(i = 0; i < n; i++)
+            {
+                  if(at[i] <= time && bt[i] < bt[smallest] && bt[i] > 0)
+                  {
+                        smallest = i;
+                  }
+            }
+            bt[smallest]--;
+            if(bt[smallest] == 0)
+            {
+                  count++;
+                  end = time + 1;
+                  wt = wt + end - at[smallest] - temp[smallest];
+                  turnaround_t = turnaround_t + end - at[smallest];
+            }
+      }
+      avg_w_t = wt / n; 
+      avg_t_t = turnaround_t / n;
+      printf("\n\nAverage Waiting Time:\t%lf\n", avg_w_t);
+      printf("Average Turnaround Time:\t%lf\n", avg_t_t);
+      return 0;
 }
